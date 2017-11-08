@@ -1,0 +1,5 @@
+<map id="spi_engine_set_transfer_width" name="spi_engine_set_transfer_width">
+<area shape="rect" id="node1" title="Set width of the transfered word over SPI." alt="" coords="251,5,425,47"/>
+<area shape="rect" id="node2" href="$ad400x_8h.html#aa687296d0489743858a3518864d8e46a" title=" " alt="" coords="108,13,203,39"/>
+<area shape="rect" id="node3" href="$ad400x__fmcz_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,13,60,39"/>
+</map>

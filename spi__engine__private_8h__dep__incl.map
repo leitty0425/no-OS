@@ -1,0 +1,13 @@
+<map id="drivers/axi_core/spi_engine/spi_engine_private.h" name="drivers/axi_core/spi_engine/spi_engine_private.h">
+<area shape="rect" id="node1" title=" " alt="" coords="340,5,547,47"/>
+<area shape="rect" id="node2" href="$spi__engine_8h.html" title=" " alt="" coords="365,95,521,136"/>
+<area shape="rect" id="node3" href="$iio__ad713x_8c.html" title="Implementation of iio_ad713x.c." alt="" coords="5,184,132,225"/>
+<area shape="rect" id="node4" href="$ad400x_8h.html" title="Header file for ad400x Driver." alt="" coords="208,184,351,225"/>
+<area shape="rect" id="node5" href="$ad400x_8c.html" title="Implementation of ad400x Driver." alt="" coords="75,273,217,315"/>
+<area shape="rect" id="node6" href="$ad400x__fmcz_8c.html" title=" " alt="" coords="242,273,402,315"/>
+<area shape="rect" id="node7" href="$ad77681_8h.html" title="Header file of the AD7768&#45;1 Driver." alt="" coords="426,184,570,225"/>
+<area shape="rect" id="node9" href="$ad77681evb_8c.html" title="Implementation of Main Function." alt="" coords="595,273,764,315"/>
+<area shape="rect" id="node10" href="$spi__engine_8c.html" title=" " alt="" coords="645,184,799,225"/>
+<area shape="rect" id="node11" href="$ad713x__fmc_8c.html" title="Implementation of Main Function." alt="" coords="823,184,986,225"/>
+<area shape="rect" id="node8" href="$ad77681_8c.html" title="Implementation of AD7768&#45;1 Driver." alt="" coords="426,273,570,315"/>
+</map>

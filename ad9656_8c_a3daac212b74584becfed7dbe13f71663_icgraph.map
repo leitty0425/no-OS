@@ -1,0 +1,4 @@
+<map id="ad9656_reg_read" name="ad9656_reg_read">
+<area shape="rect" id="node1" title="Reads from the ad9656 that is contected to the SPI." alt="" coords="167,5,301,32"/>
+<area shape="rect" id="node2" href="$ad9656_8h.html#ab61e88ca0626ae6931233680606b395c" title="Setup the working parameters of the ad9656 chip." alt="" coords="5,5,119,32"/>
+</map>
