@@ -37,3 +37,8 @@ include ../../tools/scripts/linux.mk
 endif
 
 endif
+
+# Use " >make list | tr ' ' '\n' " to see the file list with new lines instead
+# of spaces
+list:
+	@echo $(sort $(SRCS) $(INCS))
