@@ -157,6 +157,20 @@ int32_t gpio_get_direction(struct gpio_desc *desc,
 }
 
 /**
+ * @brief Place GPIO in tristate mode.
+ * @param desc - The GPIO descriptor.
+ * @return \ref SUCCESS in case of success, \ref FAILURE otherwise.
+ */
+int32_t gpio_tristate(struct gpio_desc *desc)
+{
+	if (desc) {
+		// Unused variable - fix compiler warning
+	}
+
+	return SUCCESS;
+}
+
+/**
  * @brief Set the value of the specified GPIO.
  * @param desc - The GPIO descriptor.
  * @param value - The value.

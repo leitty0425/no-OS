@@ -108,6 +108,9 @@ int32_t gpio_direction_output(struct gpio_desc *desc,
 int32_t gpio_get_direction(struct gpio_desc *desc,
 			   uint8_t *direction);
 
+/* Place GPIO in tristate mode. */
+int32_t gpio_tristate(struct gpio_desc *desc);
+
 /* Set the value of the specified GPIO. */
 int32_t gpio_set_value(struct gpio_desc *desc,
 		       uint8_t value);
