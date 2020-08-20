@@ -206,6 +206,28 @@ int32_t gpio_get_direction(struct gpio_desc *desc, uint8_t *direction)
 }
 
 /**
+ * @brief Place GPIO in tristate mode.
+ * @param desc - The GPIO descriptor.
+ * @return \ref SUCCESS in case of success, \ref FAILURE otherwise.
+ */
+int32_t gpio_tristate(struct gpio_desc *desc)
+{
+	int32_t ret;
+
+	ret = adi_gpio_OutputEnable(PORT(desc->number), PIN(desc->number),
+				    false);
+	if ((ret != ADI_GPIO_SUCCESS) && (ret != ADI_GPIO_NOT_INITIALIZED))
+		return FAILURE;
+
+	ret = adi_gpio_InputEnable(PORT(desc->number), PIN(desc->number),
+				   false);
+	if ((ret != ADI_GPIO_SUCCESS) && (ret != ADI_GPIO_NOT_INITIALIZED))
+		return FAILURE;
+
+	return SUCCESS;
+}
+
+/**
  * @brief Set the value of the specified GPIO.
  * @param desc - The GPIO descriptor.
  * @param value - The value: GPIO_HIGH or GPIO_LOW
