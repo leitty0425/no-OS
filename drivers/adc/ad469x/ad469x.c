@@ -211,7 +211,6 @@ static int32_t ad469x_init_gpio(struct ad469x_dev *dev,
 	return SUCCESS;
 }
 
-
 /**
  * Set the power consumption mode of the ADC core.
  * @param dev - The device structure.
@@ -230,6 +229,33 @@ int32_t ad469x_set_interface_mode(struct ad469x_dev *dev,
 			AD469x_REG_SETUP,
 			AD469x_REG_SETUP_IF_MODE_MASK,
 			AD469x_REG_SETUP_IF_MODE(mode));
+
+	return ret;
+}
+
+/**
+ * Set the power consumption mode of the ADC core.
+ * @param dev - The device structure.
+ * @param mode - The power mode.
+ * 					Accepted values: AD77681_ECO
+ *									 AD77681_MEDIAN
+ *									 AD77681_FAST
+ * @return 0 in case of success, negative error code otherwise.
+ */
+int32_t ad469x_set_busy(struct ad469x_dev *dev,
+			       enum ad469x_busy_gp_sel gp_sel)
+{
+	int32_t ret;
+
+	ret = ad469x_spi_write_mask(dev,
+			AD469x_REG_GP_MODE,
+			AD469x_REG_GP_MODE_BUSY_GP_EN_MASK,
+			AD469x_REG_GP_MODE_BUSY_GP_EN(1));
+
+	ret = ad469x_spi_write_mask(dev,
+			AD469x_REG_GP_MODE,
+			AD469x_REG_GP_MODE_BUSY_GP_SEL_MASK,
+			AD469x_REG_GP_MODE_BUSY_GP_SEL(gp_sel));
 
 	return ret;
 }
@@ -289,6 +315,8 @@ int32_t ad469x_init(struct ad469x_dev **device,
 		goto error;
 
 	ad469x_spi_reg_read(dev, AD469x_REG_SCRATCH_PAD, &data);
+
+	ad469x_set_busy(dev, AD469x_busy_gp0);
 
 	ad469x_set_interface_mode(dev, AD469x_IF_CONVERSION_MODE);
 

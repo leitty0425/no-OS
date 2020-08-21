@@ -87,12 +87,24 @@
 #define AD469x_REG_SETUP_IF_MODE_MASK		(0x01 << 2)
 #define AD469x_REG_SETUP_IF_MODE(x)			((x & 0x01) << 2)
 
+/* AD469x_REG_GP_MODE */
+#define AD469x_REG_GP_MODE_BUSY_GP_EN_MASK		(0x01 << 1)
+#define AD469x_REG_GP_MODE_BUSY_GP_EN(x)		((x & 0x01) << 1)
+#define AD469x_REG_GP_MODE_BUSY_GP_SEL_MASK		(0x01 << 4)
+#define AD469x_REG_GP_MODE_BUSY_GP_SEL(x)		((x & 0x01) << 4)
+
 /*****************************************************************************/
 /*************************** Types Declarations *******************************/
 /******************************************************************************/
+
 enum ad469x_interface_mode {
 	AD469x_IF_REGISTER_MODE = 0,
 	AD469x_IF_CONVERSION_MODE = 1,
+};
+
+enum ad469x_busy_gp_sel {
+	AD469x_busy_gp0 = 0,
+	AD469x_busy_gp3 = 1,
 };
 
 enum ad400x_supported_dev_ids {
