@@ -68,13 +68,13 @@ int main()
 	struct ad469x_init_param ad469x_init_param = {
 		.spi_init = {
 			.chip_select = AD469x_SPI_CS,
-			.max_speed_hz = 2083333,
+			.max_speed_hz = 20000000,
 			.mode = SPI_MODE_0,
 			.platform_ops = &spi_eng_platform_ops,
 			.extra = (void*)&spi_eng_init_param,
 		},
 		.clkgen_init = clkgen_init,
-		.reg_access_speed = 1000000,
+		.reg_access_speed = 20000000,
 		.dev_id = ID_AD4003, /* dev_id */
 		.gpio_resetn = &ad469x_resetn,
 	};

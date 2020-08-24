@@ -307,6 +307,8 @@ int32_t ad469x_init(struct ad469x_dev **device,
 	dev->reg_access_speed = init_param->reg_access_speed;
 	dev->dev_id = init_param->dev_id;
 
+	spi_engine_set_speed(dev->spi_desc, dev->reg_access_speed);
+
 	ad469x_spi_reg_read(dev, AD469x_REG_SCRATCH_PAD, &data);
 
 	data = 0xEA;
@@ -321,6 +323,8 @@ int32_t ad469x_init(struct ad469x_dev **device,
 	ad469x_set_interface_mode(dev, AD469x_IF_CONVERSION_MODE);
 
 	ad469x_conversion_mode_command_write(dev, AD469x_CMD_SEL_TEMP_SNSOR_CH);
+
+	spi_engine_set_speed(dev->spi_desc, dev->spi_desc->max_speed_hz);
 
 	*device = dev;
 
